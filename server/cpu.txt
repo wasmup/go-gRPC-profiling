@@ -1,0 +1,189 @@
+File: server
+Type: cpu
+Time: Apr 22, 2021 at 9:00am (MST)
+Duration: 8.18s, Total samples = 830ms (10.15%)
+Showing nodes accounting for 830ms, 100% of 830ms total
+      flat  flat%   sum%        cum   cum%
+     230ms 27.71% 27.71%      250ms 30.12%  syscall.Syscall
+     100ms 12.05% 39.76%      100ms 12.05%  runtime.futex
+      90ms 10.84% 50.60%       90ms 10.84%  runtime.epollwait
+      40ms  4.82% 55.42%      240ms 28.92%  runtime.findrunnable
+      20ms  2.41% 57.83%      100ms 12.05%  net.(*conn).Read
+      20ms  2.41% 60.24%       80ms  9.64%  runtime.mallocgc
+      20ms  2.41% 62.65%       20ms  2.41%  runtime.releasem (inline)
+      20ms  2.41% 65.06%       20ms  2.41%  runtime.selectgo
+      10ms  1.20% 66.27%       10ms  1.20%  golang.org/x/net/http2/hpack.(*Decoder).Write
+      10ms  1.20% 67.47%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*bufWriter).Write
+      10ms  1.20% 68.67%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*http2Server).finishStream.func1
+      10ms  1.20% 69.88%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*loopyWriter).writeHeader
+      10ms  1.20% 71.08%       30ms  3.61%  google.golang.org/grpc/internal/transport.(*recvBufferReader).Read
+      10ms  1.20% 72.29%       10ms  1.20%  google.golang.org/protobuf/internal/impl.(*MessageInfo).unmarshalPointer
+      10ms  1.20% 73.49%       10ms  1.20%  google.golang.org/protobuf/internal/impl.pointer.IsNil (inline)
+      10ms  1.20% 74.70%       10ms  1.20%  runtime.(*gList).pop (inline)
+      10ms  1.20% 75.90%       10ms  1.20%  runtime.(*itabTableType).find
+      10ms  1.20% 77.11%       10ms  1.20%  runtime.(*mheap).nextSpanForSweep
+      10ms  1.20% 78.31%       10ms  1.20%  runtime.acquirem (inline)
+      10ms  1.20% 79.52%       10ms  1.20%  runtime.adjusttimers
+      10ms  1.20% 80.72%       70ms  8.43%  runtime.futexsleep
+      10ms  1.20% 81.93%       20ms  2.41%  runtime.gentraceback
+      10ms  1.20% 83.13%       10ms  1.20%  runtime.gopark
+      10ms  1.20% 84.34%       80ms  9.64%  runtime.mPark
+      10ms  1.20% 85.54%       10ms  1.20%  runtime.madvise
+      10ms  1.20% 86.75%       10ms  1.20%  runtime.mapaccess1
+      10ms  1.20% 87.95%       10ms  1.20%  runtime.nextFreeFast (inline)
+      10ms  1.20% 89.16%       10ms  1.20%  runtime.puintptr.ptr (inline)
+      10ms  1.20% 90.36%       10ms  1.20%  runtime.resolveTypeOff
+      10ms  1.20% 91.57%       10ms  1.20%  runtime.runqgrab
+      10ms  1.20% 92.77%       10ms  1.20%  runtime.step
+      10ms  1.20% 93.98%       20ms  2.41%  runtime.wakeNetPoller
+      10ms  1.20% 95.18%       10ms  1.20%  runtime.walltime1
+      10ms  1.20% 96.39%       10ms  1.20%  runtime.write1
+      10ms  1.20% 97.59%       20ms  2.41%  server/hello._Greeter_SayHello_Handler
+      10ms  1.20% 98.80%       10ms  1.20%  syscall.Syscall6
+      10ms  1.20%   100%       20ms  2.41%  time.AfterFunc
+         0     0%   100%      100ms 12.05%  bufio.(*Reader).Read
+         0     0%   100%       20ms  2.41%  context.WithDeadline
+         0     0%   100%       20ms  2.41%  context.WithTimeout
+         0     0%   100%       20ms  2.41%  github.com/golang/protobuf/proto.Clone
+         0     0%   100%       10ms  1.20%  github.com/golang/protobuf/proto.Unmarshal
+         0     0%   100%       10ms  1.20%  github.com/golang/protobuf/proto.UnmarshalMerge
+         0     0%   100%      120ms 14.46%  golang.org/x/net/http2.(*Framer).ReadFrame
+         0     0%   100%       10ms  1.20%  golang.org/x/net/http2.(*Framer).WritePing
+         0     0%   100%       10ms  1.20%  golang.org/x/net/http2.(*Framer).endWrite
+         0     0%   100%       10ms  1.20%  golang.org/x/net/http2.(*Framer).readMetaFrame
+         0     0%   100%      100ms 12.05%  golang.org/x/net/http2.readFrameHeader
+         0     0%   100%       10ms  1.20%  golang.org/x/net/http2.typeFrameParser (inline)
+         0     0%   100%      220ms 26.51%  google.golang.org/grpc.(*Server).handleRawConn.func1
+         0     0%   100%      100ms 12.05%  google.golang.org/grpc.(*Server).handleStream
+         0     0%   100%      100ms 12.05%  google.golang.org/grpc.(*Server).processUnaryRPC
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc.(*Server).processUnaryRPC.func2
+         0     0%   100%      220ms 26.51%  google.golang.org/grpc.(*Server).serveStreams
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc.(*Server).serveStreams.func1
+         0     0%   100%      100ms 12.05%  google.golang.org/grpc.(*Server).serveStreams.func1.2
+         0     0%   100%       40ms  4.82%  google.golang.org/grpc.(*parser).recvMsg
+         0     0%   100%       40ms  4.82%  google.golang.org/grpc.recvAndDecompress
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/encoding/proto.codec.Unmarshal
+         0     0%   100%       20ms  2.41%  google.golang.org/grpc/internal/status.(*Status).Proto (inline)
+         0     0%   100%       30ms  3.61%  google.golang.org/grpc/internal/transport.(*Stream).Read
+         0     0%   100%      180ms 21.69%  google.golang.org/grpc/internal/transport.(*bufWriter).Flush
+         0     0%   100%       20ms  2.41%  google.golang.org/grpc/internal/transport.(*controlBuffer).executeAndPut
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*controlBuffer).get
+         0     0%   100%       20ms  2.41%  google.golang.org/grpc/internal/transport.(*controlBuffer).put (inline)
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*decodeState).addMetadata (inline)
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*decodeState).decodeHeader
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*decodeState).processHeaderField
+         0     0%   100%      220ms 26.51%  google.golang.org/grpc/internal/transport.(*http2Server).HandleStreams
+         0     0%   100%       20ms  2.41%  google.golang.org/grpc/internal/transport.(*http2Server).WriteStatus
+         0     0%   100%       20ms  2.41%  google.golang.org/grpc/internal/transport.(*http2Server).handleWindowUpdate
+         0     0%   100%       70ms  8.43%  google.golang.org/grpc/internal/transport.(*http2Server).operateHeaders
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*loopyWriter).cleanupStreamHandler
+         0     0%   100%       40ms  4.82%  google.golang.org/grpc/internal/transport.(*loopyWriter).handle
+         0     0%   100%       20ms  2.41%  google.golang.org/grpc/internal/transport.(*loopyWriter).headerHandler
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*loopyWriter).pingHandler
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/internal/transport.(*loopyWriter).registerStreamHandler (inline)
+         0     0%   100%      230ms 27.71%  google.golang.org/grpc/internal/transport.(*loopyWriter).run
+         0     0%   100%       20ms  2.41%  google.golang.org/grpc/internal/transport.(*recvBufferReader).read
+         0     0%   100%       30ms  3.61%  google.golang.org/grpc/internal/transport.(*transportReader).Read
+         0     0%   100%      230ms 27.71%  google.golang.org/grpc/internal/transport.newHTTP2Server.func2
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/internal/transport.newRecvBuffer (inline)
+         0     0%   100%       10ms  1.20%  google.golang.org/grpc/internal/transport.newWriteQuota (inline)
+         0     0%   100%       10ms  1.20%  google.golang.org/protobuf/internal/impl.(*MessageInfo).New
+         0     0%   100%       10ms  1.20%  google.golang.org/protobuf/internal/impl.(*MessageInfo).unmarshal
+         0     0%   100%       10ms  1.20%  google.golang.org/protobuf/internal/impl.(*messageState).IsValid
+         0     0%   100%       10ms  1.20%  google.golang.org/protobuf/internal/impl.(*messageState).New
+         0     0%   100%       20ms  2.41%  google.golang.org/protobuf/proto.Clone
+         0     0%   100%       10ms  1.20%  google.golang.org/protobuf/proto.UnmarshalOptions.UnmarshalState (inline)
+         0     0%   100%       10ms  1.20%  google.golang.org/protobuf/proto.UnmarshalOptions.unmarshal
+         0     0%   100%       80ms  9.64%  internal/poll.(*FD).Read
+         0     0%   100%      180ms 21.69%  internal/poll.(*FD).Write
+         0     0%   100%       10ms  1.20%  internal/poll.(*pollDesc).wait
+         0     0%   100%       10ms  1.20%  internal/poll.(*pollDesc).waitRead (inline)
+         0     0%   100%      250ms 30.12%  internal/poll.ignoringEINTRIO (inline)
+         0     0%   100%       10ms  1.20%  internal/poll.runtime_pollWait
+         0     0%   100%      130ms 15.66%  io.ReadAtLeast
+         0     0%   100%      130ms 15.66%  io.ReadFull (inline)
+         0     0%   100%       10ms  1.20%  main.main
+         0     0%   100%      180ms 21.69%  net.(*conn).Write
+         0     0%   100%       80ms  9.64%  net.(*netFD).Read
+         0     0%   100%      180ms 21.69%  net.(*netFD).Write
+         0     0%   100%       10ms  1.20%  os.Create (inline)
+         0     0%   100%       10ms  1.20%  os.OpenFile
+         0     0%   100%       10ms  1.20%  os.openFileNolog
+         0     0%   100%       10ms  1.20%  reflect.(*rtype).ptrTo
+         0     0%   100%       10ms  1.20%  reflect.(*rtype).typeOff (inline)
+         0     0%   100%       10ms  1.20%  reflect.New
+         0     0%   100%       10ms  1.20%  reflect.resolveTypeOff
+         0     0%   100%       10ms  1.20%  runtime.(*_type).typeOff (inline)
+         0     0%   100%       10ms  1.20%  runtime.(*pageAlloc).scavenge
+         0     0%   100%       10ms  1.20%  runtime.(*pageAlloc).scavengeOne
+         0     0%   100%       10ms  1.20%  runtime.(*pageAlloc).scavengeRangeLocked
+         0     0%   100%       10ms  1.20%  runtime.addtimer
+         0     0%   100%       10ms  1.20%  runtime.adjustframe
+         0     0%   100%       10ms  1.20%  runtime.assertE2I
+         0     0%   100%       20ms  2.41%  runtime.bgscavenge
+         0     0%   100%       10ms  1.20%  runtime.bgscavenge.func1
+         0     0%   100%       10ms  1.20%  runtime.bgscavenge.func2
+         0     0%   100%       10ms  1.20%  runtime.bgsweep
+         0     0%   100%       20ms  2.41%  runtime.chansend
+         0     0%   100%       20ms  2.41%  runtime.checkTimers
+         0     0%   100%       20ms  2.41%  runtime.copystack
+         0     0%   100%       20ms  2.41%  runtime.entersyscall
+         0     0%   100%       20ms  2.41%  runtime.entersyscall_sysmon
+         0     0%   100%       40ms  4.82%  runtime.futexwakeup
+         0     0%   100%       10ms  1.20%  runtime.getStackMap
+         0     0%   100%       10ms  1.20%  runtime.getitab
+         0     0%   100%       10ms  1.20%  runtime.gfget
+         0     0%   100%       40ms  4.82%  runtime.goexit0
+         0     0%   100%       20ms  2.41%  runtime.goready
+         0     0%   100%       20ms  2.41%  runtime.goready.func1
+         0     0%   100%       20ms  2.41%  runtime.goschedImpl
+         0     0%   100%       20ms  2.41%  runtime.gosched_m
+         0     0%   100%       10ms  1.20%  runtime.injectglist
+         0     0%   100%       10ms  1.20%  runtime.main
+         0     0%   100%       10ms  1.20%  runtime.makechan
+         0     0%   100%       10ms  1.20%  runtime.makemap_small
+         0     0%   100%       10ms  1.20%  runtime.makeslice
+         0     0%   100%      240ms 28.92%  runtime.mcall
+         0     0%   100%       10ms  1.20%  runtime.modtimer
+         0     0%   100%       90ms 10.84%  runtime.netpoll
+         0     0%   100%       10ms  1.20%  runtime.netpollBreak
+         0     0%   100%       10ms  1.20%  runtime.netpollblock
+         0     0%   100%       70ms  8.43%  runtime.newobject
+         0     0%   100%       10ms  1.20%  runtime.newproc
+         0     0%   100%       10ms  1.20%  runtime.newproc.func1
+         0     0%   100%       10ms  1.20%  runtime.newproc1
+         0     0%   100%       20ms  2.41%  runtime.newstack
+         0     0%   100%       70ms  8.43%  runtime.notesleep
+         0     0%   100%       40ms  4.82%  runtime.notewakeup
+         0     0%   100%      180ms 21.69%  runtime.park_m
+         0     0%   100%       10ms  1.20%  runtime.pcdatavalue
+         0     0%   100%       10ms  1.20%  runtime.pcvalue
+         0     0%   100%       20ms  2.41%  runtime.ready
+         0     0%   100%       20ms  2.41%  runtime.reentersyscall
+         0     0%   100%       10ms  1.20%  runtime.resettimer (inline)
+         0     0%   100%       10ms  1.20%  runtime.runOneTimer
+         0     0%   100%       10ms  1.20%  runtime.runqsteal
+         0     0%   100%       10ms  1.20%  runtime.runtimer
+         0     0%   100%       10ms  1.20%  runtime.scavengeSleep
+         0     0%   100%      240ms 28.92%  runtime.schedule
+         0     0%   100%       20ms  2.41%  runtime.selectnbsend
+         0     0%   100%       20ms  2.41%  runtime.send
+         0     0%   100%       20ms  2.41%  runtime.startm
+         0     0%   100%       80ms  9.64%  runtime.stopm
+         0     0%   100%       10ms  1.20%  runtime.sweepone
+         0     0%   100%       10ms  1.20%  runtime.sysUnused
+         0     0%   100%       60ms  7.23%  runtime.systemstack
+         0     0%   100%       10ms  1.20%  runtime.wakeScavenger
+         0     0%   100%       20ms  2.41%  runtime.wakep
+         0     0%   100%       10ms  1.20%  runtime.walltime (inline)
+         0     0%   100%       10ms  1.20%  runtime.write (inline)
+         0     0%   100%       10ms  1.20%  syscall.Open (inline)
+         0     0%   100%       70ms  8.43%  syscall.Read (inline)
+         0     0%   100%      180ms 21.69%  syscall.Write (inline)
+         0     0%   100%       10ms  1.20%  syscall.openat
+         0     0%   100%       70ms  8.43%  syscall.read
+         0     0%   100%      180ms 21.69%  syscall.write
+         0     0%   100%       10ms  1.20%  time.Now
+         0     0%   100%       10ms  1.20%  time.now
+         0     0%   100%       10ms  1.20%  time.resetTimer (inline)
+         0     0%   100%       10ms  1.20%  time.startTimer
