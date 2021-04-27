@@ -12,6 +12,8 @@ go test -v
 
 go test -bench=. -benchmem -memprofile mem.out -cpuprofile cpu.out -blockprofile block.out -mutexprofile mutex.out
 
+go tool pprof -http=":8787" cpu.out
+
 go tool pprof -text -output cpu.txt cpu.out
 go tool pprof -png -output cpu.png cpu.out
 go tool pprof -png -output mem.png mem.out
