@@ -22,11 +22,18 @@ go tool pprof -png -output mutex.png mutex.out
 ```
 will print a list of the hottest functions.
 
-2. [net/http/pprof](http://golang.org/pkg/net/http/pprof): This is the ideal solution for network servers:
+2. [net/http/pprof](http://golang.org/pkg/net/http/pprof): This is the ideal solution for network servers:  
 Add an import:
 ```go
 import _ "net/http/pprof"
 ```
+If your application is not already running an http server, you need to start one. Add "net/http" and "log" to your imports and the following code to your main function (change the port number if needed):
+```go
+	go func() {
+		log.Println(http.ListenAndServe("localhost:8787", nil))
+	}()
+```
+
 Get the results of CPU profiling:
 ```sh
 curl -o cpu.prof "http://myserver:8787/debug/pprof/profile"
