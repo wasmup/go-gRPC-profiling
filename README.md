@@ -36,12 +36,21 @@ If your application is not already running an http server, you need to start one
 
 Get the results of CPU profiling:
 ```sh
-curl -o cpu.prof "http://myserver:8787/debug/pprof/profile"
+curl -o cpu.prof "http://localhost:8787/debug/pprof/profile"
 ```
 
+Get the results of CPU profiling:
 ```sh
-go tool pprof --text mybin  http://myserver:8787:/debug/pprof/profile
+go tool pprof --text cpu.txt  http://myserver:8787/debug/pprof/profile
 ```
+
+Get the results of CPU profiling from binary file to local HTTP server:
+```sh
+go tool pprof -http=":8788" cpu.out
+```
+You may click the VIEW then `Graph` or  `Flame Graph` menu:
+<img src="flamegraph.png">
+
 3. Manual profile collection. You need to import [runtime/pprof](http://golang.org/pkg/runtime/pprof/) and add the following code to main function:
 ```go
 if *flagCpuprofile != "" {
