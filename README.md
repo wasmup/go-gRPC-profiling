@@ -113,6 +113,3 @@ go tool pprof -png -output mem.png mem.out
 go tool pprof -png -output block.png block.out
 go tool pprof -png -output mutex.png mutex.out
 ```
-<a href="cpu.txt">cpu.txt</a>
-
-<img src="cpu.png">
